@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Checker — EU AI Act Risk Triage</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="disclaimer-banner">
+  <strong>Not legal advice.</strong> Educational, best-effort triage only — always verify with a qualified lawyer before relying on this.
+</div>
+
+<header class="page-header">
+  <h1>AI Checker</h1>
+  <p class="subtitle">Paste a URL for an AI product. Get a best-effort EU AI Act risk read: category, plain-English explanation, and the specific articles behind it.</p>
+</header>
+
+<main>
+  <form id="analyze-form">
+    <label for="url">Website URL</label>
+    <input type="text" id="url" name="url" placeholder="https://example.com" autocomplete="url" required>
+
+    <label for="analysis-mode">Analysis Mode</label>
+    <select id="analysis-mode" name="analysis-mode">
+      <option value="free" selected>Local Rule Engine (100% Free - No Key Required)</option>
+      <option value="anthropic">Advanced AI Scan (Requires Anthropic API Key)</option>
+      <option value="openai">Advanced AI Scan (Requires OpenAI API Key)</option>
+    </select>
+
+    <details id="anthropic-key-details" class="api-key-details" hidden>
+      <summary>Anthropic API key</summary>
+      <div class="details-body">
+        <label for="anthropic-api-key">Your Anthropic API key</label>
+        <input type="password" id="anthropic-api-key" name="anthropic-api-key" placeholder="sk-ant-..." autocomplete="off">
+        <label class="checkbox-label">
+          <input type="checkbox" id="anthropic-remember-key">
+          Remember for this browser tab only (cleared when you close it)
+        </label>
+        <p class="hint">
+          Sent directly to this server for one request only — never logged or stored server-side.
+          <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">Get a key from the Anthropic Console &rarr;</a>
+        </p>
+      </div>
+    </details>
+
+    <details id="openai-key-details" class="api-key-details" hidden>
+      <summary>OpenAI API key</summary>
+      <div class="details-body">
+        <label for="openai-api-key">Your OpenAI API key</label>
+        <input type="password" id="openai-api-key" name="openai-api-key" placeholder="sk-..." autocomplete="off">
+        <label class="checkbox-label">
+          <input type="checkbox" id="openai-remember-key">
+          Remember for this browser tab only (cleared when you close it)
+        </label>
+        <p class="hint">
+          Sent directly to this server for one request only — never logged or stored server-side.
+          <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">Get a key from the OpenAI Platform &rarr;</a>
+        </p>
+      </div>
+    </details>
+
+    <button type="submit" id="submit-btn">Analyze</button>
+  </form>
+
+  <div id="status" class="status" hidden></div>
+
+  <section id="result" class="result" hidden>
+    <div class="result-header">
+      <span id="category-badge" class="badge"></span>
+      <span id="confidence-badge" class="confidence"></span>
+    </div>
+
+    <p id="explanation"></p>
+
+    <div id="caveats-block" class="block" hidden>
+      <h3>Caveats</h3>
+      <ul id="caveats-list"></ul>
+    </div>
+
+    <div id="citations-block" class="block" hidden>
+      <h3>Legal basis</h3>
+      <ul id="citations-list"></ul>
+    </div>
+
+    <p class="meta" id="result-meta"></p>
+
+    <div class="disclaimer-banner disclaimer-inline">
+      <strong>Not legal advice.</strong> <span id="disclaimer-text"></span>
+    </div>
+  </section>
+</main>
+
+<footer class="page-footer">
+  <p>AI Checker is an educational tool, not a law firm. For an actual compliance determination, consult qualified counsel.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

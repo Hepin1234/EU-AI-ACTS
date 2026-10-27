@@ -1,0 +1,28 @@
+.env
+backend/.env
+backend/.venv/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Local tooling / editor config
+.claude/
+.gstack/
+.vscode/
+CLAUDE.md
+gstack-*.md
+claude-ship-SKILL.md
+claude-code-hook-mutation.md
+golden-ship-claude.md
+
+# Old copies at repo root — the live code is in backend/ and frontend/
+/__init__.py
+/main.py
+/classifier.py
+/models.py
+/scraper.py
+/eu_ai_act_reference.py
+/index.html
+/script.js
+/style.css

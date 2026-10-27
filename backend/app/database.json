@@ -1,0 +1,62 @@
+{
+  "_comment": "Illustrative seed data for the free local rule engine. Keys are root domains (no 'www.', lowercase). Each entry short-circuits the keyword heuristic in local_classifier.py with a pre-vetted classification. Not exhaustive — extend as needed.",
+
+  "clearview.ai": {
+    "category": "prohibited",
+    "confidence": "high",
+    "explanation": "This product builds a facial recognition database by scraping images from the internet without consent, which Article 5(1)(e) bans outright regardless of the product's other safeguards.",
+    "cited_articles": ["Art. 5(1)(e)"],
+    "caveats": ["Domain matched an entry in the local rule-engine database, not a live reading of the current site content."]
+  },
+
+  "hirevue.com": {
+    "category": "high_risk",
+    "confidence": "medium",
+    "explanation": "AI-driven candidate assessment and hiring tools fall under Annex III(4) as employment/worker-management systems, requiring conformity assessment, human oversight, and registration before deployment in the EU.",
+    "cited_articles": ["Annex III(4)"],
+    "caveats": ["Domain matched an entry in the local rule-engine database, not a live reading of the current site content."]
+  },
+
+  "workday.com": {
+    "category": "high_risk",
+    "confidence": "medium",
+    "explanation": "Workday's HR suite includes AI-assisted recruitment and worker-management features, which fall under Annex III(4) as high-risk employment systems.",
+    "cited_articles": ["Annex III(4)"],
+    "caveats": ["Domain matched an entry in the local rule-engine database, not a live reading of the current site content."]
+  },
+
+  "zestfinance.com": {
+    "category": "high_risk",
+    "confidence": "medium",
+    "explanation": "Automated credit-underwriting models determine creditworthiness, which Annex III(5) classifies as high-risk due to its impact on access to essential financial services.",
+    "cited_articles": ["Annex III(5)"],
+    "caveats": ["Domain matched an entry in the local rule-engine database, not a live reading of the current site content."]
+  },
+
+  "proctorio.com": {
+    "category": "high_risk",
+    "confidence": "medium",
+    "explanation": "Exam-proctoring software that monitors and flags student behaviour falls under Annex III(3) as an education/training system evaluating or monitoring test-takers.",
+    "cited_articles": ["Annex III(3)"],
+    "caveats": ["Domain matched an entry in the local rule-engine database, not a live reading of the current site content."]
+  },
+
+  "openai.com": {
+    "category": "limited_risk",
+    "confidence": "low",
+    "explanation": "General-purpose conversational AI products carry transparency obligations to disclose that a user is interacting with AI, and to label AI-generated content. A specific deployment could shift into a higher tier depending on use case.",
+    "cited_articles": ["Art. 50(1)", "Art. 50(2)"],
+    "caveats": [
+      "Domain matched an entry in the local rule-engine database, not a live reading of the current site content.",
+      "General-purpose AI providers also carry separate GPAI transparency duties under Chapter V (Articles 51-56)."
+    ]
+  },
+
+  "intercom.com": {
+    "category": "limited_risk",
+    "confidence": "low",
+    "explanation": "Customer-support chatbots must disclose to users that they are interacting with an AI system per Article 50(1), unless this is already obvious from context.",
+    "cited_articles": ["Art. 50(1)"],
+    "caveats": ["Domain matched an entry in the local rule-engine database, not a live reading of the current site content."]
+  }
+}
