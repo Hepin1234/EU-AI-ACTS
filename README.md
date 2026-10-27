@@ -67,8 +67,8 @@ AI Checker/
 ### Install
 
 ```bash
-git clone https://github.com/<your-username>/ai-checker.git
-cd ai-checker/backend
+git clone https://github.com/Hepin1234/EU-AI-ACTS.git
+cd EU-AI-ACTS/backend
 
 python -m venv .venv
 # Windows
